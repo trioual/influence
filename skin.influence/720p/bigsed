@@ -1,0 +1,2 @@
+sed -e 's/T-OSD...>DialogCloseButton.png/T-ContentPanel\)\]"\>DialogCloseButton.png/g' toto.xml
+

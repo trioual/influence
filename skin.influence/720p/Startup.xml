@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">10</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<control type="button" id="10">
+			<description>trigger</description>
+
+        		<onfocus>Skin.SetString(T-HomeSubMenu,5FFFFFFF)</onfocus>
+        		<onfocus>Skin.SetString(T-Recently,5FFFFFFF)</onfocus>
+        		<onfocus>Skin.SetString(T-OverlayDialog,5FFFFFFF)</onfocus>
+        		<onfocus>Skin.SetString(T-ContentPanel,DFFFFFFF)</onfocus>
+        		<onfocus>Skin.SetString(T-OSD,18FFFFFF)</onfocus>
+        		<onfocus>Skin.SetString(T-HomeNowPlayingBack,48FFFFFF)</onfocus>
+        		<onfocus>Skin.SetString(T-Floor,48FFFFFF)</onfocus>
+        		<onfocus>Skin.SetString(T-InfoMessagePanel,48FFFFFF)</onfocus>
+        		<onfocus>Skin.SetString(T-Blade,5FFFFFFF)</onfocus>
+        		<onfocus>Skin.SetString(T-DialogContext,48FFFFFF)</onfocus>
+        		<onfocus>Skin.SetString(T-BigButton,48FFFFFF)</onfocus>
+        		
+			<onfocus>SetFocus(11)</onfocus>
+			<texturenofocus>-</texturenofocus>
+			<texturefocus>-</texturefocus>
+		</control>
+		<control type="button" id="11">
+        		<onfocus>Skin.SetString(LabMen9021,Menu 1)</onfocus>
+        		<onfocus>Skin.SetString(LabMen9022,Menu 2)</onfocus>
+        		<onfocus>Skin.SetString(LabMen9023,Menu 3)</onfocus>
+        		<onfocus>Skin.SetString(LabMen9024,Menu 4)</onfocus>
+        		<onfocus>Skin.SetString(LabMen9025,Menu 5)</onfocus>
+        		<onfocus>Skin.SetString(LabSubMen90211,SubMenu 1)</onfocus>
+        		<onfocus>Skin.SetString(LabSubMen90212,SubMenu 2)</onfocus>
+        		<onfocus>Skin.SetString(LabSubMen90213,SubMenu 3)</onfocus>
+        		<onfocus>Skin.SetString(LabSubMen90214,SubMenu 4)</onfocus>
+        		<onfocus>Skin.SetString(LabSubMen90215,SubMenu 5)</onfocus>
+        		<onfocus>Skin.SetString(LabSubMen90221,SubMenu 1)</onfocus>
+        		<onfocus>Skin.SetString(LabSubMen90222,SubMenu 2)</onfocus>
+        		<onfocus>Skin.SetString(LabSubMen90223,SubMenu 3)</onfocus>
+        		<onfocus>Skin.SetString(LabSubMen90224,SubMenu 4)</onfocus>
+        		<onfocus>Skin.SetString(LabSubMen90225,SubMenu 5)</onfocus>
+        		<onfocus>Skin.SetString(LabSubMen90231,SubMenu 1)</onfocus>
+        		<onfocus>Skin.SetString(LabSubMen90232,SubMenu 2)</onfocus>
+        		<onfocus>Skin.SetString(LabSubMen90233,SubMenu 3)</onfocus>
+        		<onfocus>Skin.SetString(LabSubMen90234,SubMenu 4)</onfocus>
+        		<onfocus>Skin.SetString(LabSubMen90235,SubMenu 5)</onfocus>
+        		<onfocus>Skin.SetString(LabSubMen90241,SubMenu 1)</onfocus>
+        		<onfocus>Skin.SetString(LabSubMen90242,SubMenu 2)</onfocus>
+        		<onfocus>Skin.SetString(LabSubMen90243,SubMenu 3)</onfocus>
+        		<onfocus>Skin.SetString(LabSubMen90244,SubMenu 4)</onfocus>
+        		<onfocus>Skin.SetString(LabSubMen90245,SubMenu 5)</onfocus>
+        		<onfocus>Skin.SetString(LabSubMen90251,SubMenu 1)</onfocus>
+        		<onfocus>Skin.SetString(LabSubMen90252,SubMenu 2)</onfocus>
+        		<onfocus>Skin.SetString(LabSubMen90253,SubMenu 3)</onfocus>
+        		<onfocus>Skin.SetString(LabSubMen90254,SubMenu 4)</onfocus>
+        		<onfocus>Skin.SetString(LabSubMen90255,SubMenu 5)</onfocus>
+                        <onfocus>Skin.SetBool(Influence_InitMenu1)</onfocus>
+			<texturenofocus>-</texturenofocus>
+			<texturefocus>-</texturefocus>
+			<onfocus>SetFocus(12)</onfocus>
+			<visible>!Skin.HasSetting(Influence_InitMenu1)</visible>
+		</control>
+		<control type="button" id="11">
+			<texturenofocus>-</texturenofocus>
+			<texturefocus>-</texturefocus>
+			<onfocus>SetFocus(12)</onfocus>
+			<visible>Skin.HasSetting(Influence_InitMenu1)</visible>
+		</control>
+		<control type="button" id="12">
+			<description>trigger</description>
+			<onfocus>ReplaceWindow($INFO[System.StartupWindow])</onfocus>
+			<texturenofocus>-</texturenofocus>
+			<texturefocus>-</texturefocus>
+			<visible>!Skin.HasSetting(Use_Startup_Playlist)</visible>
+		</control>
+		<control type="button" id="12">
+			<description>trigger with startup Playlist</description>
+			<onfocus>XBMC.PlayMedia($INFO[Skin.String(Startup_Playlist_Path)])</onfocus>
+			<onfocus>ReplaceWindow($INFO[System.StartupWindow])</onfocus>
+			<texturenofocus>-</texturenofocus>
+			<texturefocus>-</texturefocus>
+			<visible>Skin.HasSetting(Use_Startup_Playlist)</visible>
+		</control>
+		<include>CommonBackground</include>
+	</controls>
+</window>

@@ -1,0 +1,2690 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">9000</defaultcontrol>
+	<controls>
+		<include>CommonBackground</include>
+		<control type="image">
+			<left>0</left>
+			<top>100r</top>
+			<width>1280</width>
+			<height>100</height>
+			<texture colordiffuse="$INFO[Skin.String(T-Floor)]">floor.png</texture>
+			<include>VisibleFadeEffect</include>
+		</control>
+		<control type="image">
+			<description>Section header image</description>
+			<left>20</left>
+			<top>3</top>
+			<width>35</width>
+			<height>35</height>
+			<aspectratio>keep</aspectratio>
+			<texture>icon_system.png</texture>
+		</control>
+		<control type="grouplist">
+			<left>65</left>
+			<top>5</top>
+			<width>1000</width>
+			<height>30</height>
+			<orientation>horizontal</orientation>
+			<align>left</align>
+			<itemgap>5</itemgap>
+			<control type="label">
+				<include>WindowTitleCommons</include>
+				<label>$LOCALIZE[20077]</label>
+			</control>
+			<control type="label">
+				<include>WindowTitleCommons</include>
+				<label>[COLOR=blue] - [/COLOR]$INFO[Container.FolderName]</label>
+				<visible>!IsEmpty(Container.FolderName)</visible>
+			</control>
+		</control>
+		<control type="group">
+			<left>90</left>
+			<top>30</top>
+			<animation type="WindowOpen" reversible="false">
+				<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300"/>
+				<effect type="fade" start="0" end="100" time="300"/>
+			</animation>
+			<animation type="WindowClose" reversible="false">
+				<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300"/>
+				<effect type="fade" start="100" end="0" time="300"/>
+			</animation>
+			<control type="image">
+				<left>5</left>
+				<top>5</top>
+				<width>1090</width>
+				<height>630</height>
+				<texture colordiffuse="$INFO[Skin.String(T-ContentPanel)]" border="15">ContentPanel.png</texture>
+			</control>
+			<control type="image">
+				<left>5</left>
+				<top>625</top>
+				<width>1090</width>
+				<height>64</height>
+				<texture border="15">ContentPanelMirror.png</texture>
+			</control>
+			<control type="button">
+				<description>Close Window button</description>
+				<left>980</left>
+				<top>11</top>
+				<width>64</width>
+				<height>32</height>
+				<label>-</label>
+				<font>-</font>
+				<onclick>PreviousMenu</onclick>
+				<texturefocus>DialogCloseButton-focus.png</texturefocus>
+				<texturenofocus colordiffuse="$INFO[Skin.String(T-ContentPanel)]">DialogCloseButton.png</texturenofocus>
+				<onleft>1</onleft>
+				<onright>1</onright>
+				<onup>1</onup>
+				<ondown>1</ondown>
+				<visible>system.getbool(input.enablemouse)</visible>
+			</control>
+			<control type="image">
+				<description>LOGO</description>
+				<left>30</left>
+				<top>15</top>
+				<width>220</width>
+				<height>80</height>
+				<aspectratio>keep</aspectratio>
+				<texture>Influence_Logo.png</texture>
+			</control>
+			<control type="list" id="9000">
+				<left>10</left>
+				<top>90</top>
+				<width>260</width>
+				<height>481</height>
+				<onleft>9010</onleft>
+				<onright>9010</onright>
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+				<pagecontrol>-</pagecontrol>
+				<scrolltime>300</scrolltime>
+				<itemlayout height="80" width="260">
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>260</width>
+						<height>81</height>
+						<texture border="5">MenuItemNF.png</texture>
+					</control>
+					<control type="label">
+						<left>250</left>
+						<top>15</top>
+						<width>380</width>
+						<height>25</height>
+						<font>font24_title</font>
+						<textcolor>grey3</textcolor>
+						<align>right</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+					<control type="label">
+						<left>250</left>
+						<top>42</top>
+						<width>870</width>
+						<height>25</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<align>right</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label2]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout height="80" width="260">
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>260</width>
+						<height>81</height>
+						<texture border="5">MenuItemFO.png</texture>
+						<animation effect="fade" start="100" end="30" time="100" condition="!Control.HasFocus(9000)">Conditional</animation>
+					</control>
+					<control type="label">
+						<left>250</left>
+						<top>15</top>
+						<width>380</width>
+						<height>25</height>
+						<font>font24_title</font>
+						<textcolor>white</textcolor>
+						<align>right</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+					<control type="label">
+						<left>250</left>
+						<top>42</top>
+						<width>870</width>
+						<height>25</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<align>right</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label2]</label>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="1">
+						<label>128</label>
+						<label2>5</label2>
+						<onclick>noop</onclick>
+					</item>
+					<item id="2">
+						<label>513</label>
+						<label2>31112</label2>
+						<onclick>noop</onclick>
+					</item>
+					<item id="3">
+						<label>31102</label>
+						<label2>31112</label2>
+						<onclick>noop</onclick>
+					</item>
+					<item id="4">
+						<label>24000</label>
+						<label2>31200</label2>
+						<onclick>noop</onclick>
+					</item>
+					<item id="5">
+						<label>Menu</label>
+						<label2>5</label2>
+						<onclick>noop</onclick>
+					</item>					
+				</content>
+			</control>
+			<control type="image">
+				<left>268</left>
+				<top>10</top>
+				<width>790</width>
+				<height>618</height>
+				<texture border="5">black-back2.png</texture>
+			</control>
+			<control type="image">
+				<left>268</left>
+				<top>10</top>
+				<width>790</width>
+				<height>52</height>
+				<texture>dialogheader.png</texture>
+			</control>
+			<control type="label">
+				<description>header label</description>
+				<left>300</left>
+				<top>20</top>
+				<width>726</width>
+				<height>30</height>
+				<font>font16</font>
+				<label>$LOCALIZE[20077] - $INFO[Container(9000).ListItem.Label]</label>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+			</control>
+			<control type="group" id="9010"> 
+				<control type="grouplist" id="9001"> <!-- General Settings -->
+					<visible>Container(9000).Hasfocus(1)</visible>
+					<left>290</left>
+					<top>60</top>
+					<width>750</width>
+					<height>530</height>
+					<itemgap>-1</itemgap>
+					<pagecontrol>60</pagecontrol>
+					<onleft>9000</onleft>
+					<onright>60</onright>
+					<onup>9001</onup>
+					<ondown>9001</ondown>
+					<control type="label" id="100"> <!-- Miscellaneous options -->
+						<width>750</width>
+						<height>45</height>
+						<font>font13_title</font>
+						<label>31106</label>
+						<textcolor>blue</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>
+					<control type="radiobutton" id="101"> <!-- AutoScroll -->
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>20189</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(AutoScroll)</onclick>
+						<selected>Skin.HasSetting(AutoScroll)</selected>
+					</control>
+					<control type="radiobutton" id="102"> <!-- Show_SlideShow_Paused -->
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>31103</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(Show_SlideShow_Paused)</onclick>
+						<selected>!Skin.HasSetting(Show_SlideShow_Paused)</selected>
+					</control>
+					<control type="radiobutton" id="112"> <!-- WindowedTrailer -->
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>31104</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(WindowedTrailer)</onclick>
+						<selected>Skin.HasSetting(WindowedTrailer)</selected>
+					</control>
+					<control type="radiobutton" id="113"> <!-- HideFilenameFlagging -->
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>31107</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(HideFilenameFlagging)</onclick>
+						<selected>Skin.HasSetting(HideFilenameFlagging)</selected>
+					</control>
+					<control type="label" id="104"> <!-- script.tvtunes -->
+						<width>750</width>
+						<height>45</height>
+						<font>font13_title</font>
+						<label>20343</label>
+						<textcolor>blue</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+						<visible>System.HasAddon(script.tvtunes)</visible>
+					</control>
+					<control type="radiobutton" id="115"> <!-- ActivateTvTunes -->
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>31126</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(ActivateTvTunes)</onclick>
+						<selected>Skin.HasSetting(ActivateTvTunes)</selected>
+						<visible>System.HasAddon(script.tvtunes)</visible>
+					</control>
+					<control type="label" id="106"> <!-- Startup Window-->
+						<width>750</width>
+						<height>45</height>
+						<font>font13_title</font>
+						<label>512</label>
+						<textcolor>blue</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>
+					<control type="radiobutton" id="107"> <!-- Use_Startup_Playlist -->
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>21398</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(Use_Startup_Playlist)</onclick>
+						<selected>Skin.HasSetting(Use_Startup_Playlist)</selected>
+					</control>
+					<control type="button" id="108"> <!-- Startup_Playlist_Path -->
+						<description>Startup Playlist Path</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label>15311</label>
+						<label2>$INFO[Skin.String(Startup_Playlist_Path)]</label2>
+						<onclick>Skin.SetFile(Startup_Playlist_Path,,special://MusicPlaylists/)</onclick>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<enable>Skin.HasSetting(Use_Startup_Playlist)</enable>
+					</control>
+				</control>
+				<control type="scrollbar" id="60"> <!-- ScrollBar -->
+					<left>1060</left>
+					<top>60</top>
+					<width>25</width>
+					<height>530</height>
+					<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
+					<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
+					<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
+					<textureslidernib>ScrollBarNib.png</textureslidernib>
+					<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
+					<onleft>9001</onleft>
+					<onright>9000</onright>
+					<showonepage>false</showonepage>
+					<orientation>vertical</orientation>
+					<visible>Container(9000).Hasfocus(1)</visible>
+				</control>			
+				<control type="grouplist" id="9002"> <!-- Home Window option -->
+					<visible>Container(9000).Hasfocus(2)</visible>
+					<left>290</left>
+					<top>60</top>
+					<width>750</width>
+					<height>530</height>
+					<itemgap>-1</itemgap>
+					<pagecontrol>60</pagecontrol>
+					<onleft>9000</onleft>
+					<onright>60</onright>
+					<onup>9002</onup>
+					<ondown>9002</ondown>
+					<control type="label" id="200"> <!-- Home screen options -->
+						<width>750</width>
+						<height>45</height>
+						<font>font13_title</font>
+						<label>31101</label>
+						<textcolor>blue</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>
+					<control type="radiobutton" id="202"> <!-- enable video info -->
+						<description>enable video info</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label>20176</label>
+						<onclick>Skin.ToggleSetting(homepageVideoinfo)</onclick>
+						<selected>!Skin.HasSetting(homepageVideoinfo)</selected>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+					</control>
+					<control type="radiobutton" id="203"> <!-- enable music info -->
+						<description>enable music info</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label>20083</label>
+						<onclick>Skin.ToggleSetting(homepageMusicinfo)</onclick>
+						<selected>!Skin.HasSetting(homepageMusicinfo)</selected>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+					</control>
+					<control type="radiobutton" id="204"> <!-- enable weather info -->
+						<description>enable weather info</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label>20084</label>
+						<onclick>Skin.ToggleSetting(homepageWeatherinfo)</onclick>
+						<selected>Skin.HasSetting(homepageWeatherinfo)</selected>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<visible>!IsEmpty(Weather.Plugin)</visible>
+					</control>
+					<control type="radiobutton" id="205"> <!-- Show Recently added Video info -->
+						<description>Show Recently added Video info</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label>31117</label>
+						<onclick>Skin.ToggleSetting(HomepageHideRecentlyAddedVideo)</onclick>
+						<selected>!Skin.HasSetting(HomepageHideRecentlyAddedVideo)</selected>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+					</control>
+					<control type="radiobutton" id="206"> <!-- Show Recently added info -->
+						<description>Show Recently added info</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label>31116</label>
+						<onclick>Skin.ToggleSetting(HomepageHideRecentlyAddedAlbums)</onclick>
+						<selected>!Skin.HasSetting(HomepageHideRecentlyAddedAlbums)</selected>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+					</control>
+					<control type="label" id="220"> <!-- Hide Main Menu Buttons -->
+						<width>750</width>
+						<height>45</height>
+						<font>font13_title</font>
+						<label>31108</label>
+						<textcolor>blue</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>
+					<control type="radiobutton" id="221"> <!-- Hide Videos Button -->
+						<description>Hide Videos Button</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label>$LOCALIZE[31111] - $LOCALIZE[3]</label>
+						<onclick>Skin.ToggleSetting(HomeMenuNoVideosButton)</onclick>
+						<selected>Skin.HasSetting(HomeMenuNoVideosButton)</selected>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+					</control>
+					<control type="radiobutton" id="222"> <!-- Hide Movies Button -->
+						<description>Hide Movies Button</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label>$LOCALIZE[31111] - $LOCALIZE[20342] [COLOR=grey3] ($LOCALIZE[20314])[/COLOR]</label>
+						<onclick>Skin.ToggleSetting(HomeMenuNoMovieButton)</onclick>
+						<selected>Skin.HasSetting(HomeMenuNoMovieButton)</selected>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<enable>Library.HasContent(Movies)</enable>
+					</control>
+					<control type="radiobutton" id="223"> <!-- Hide TV Shows Button -->
+						<description>Hide TV Shows Button</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label>$LOCALIZE[31111] - $LOCALIZE[20343] [COLOR=grey3] ($LOCALIZE[20314])[/COLOR]</label>
+						<onclick>Skin.ToggleSetting(HomeMenuNoTVShowButton)</onclick>
+						<selected>Skin.HasSetting(HomeMenuNoTVShowButton)</selected>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<enable>Library.HasContent(TVShows)</enable>
+					</control>
+					<control type="radiobutton" id="224"> <!-- Hide Music Button -->
+						<description>Hide Music Button</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label>$LOCALIZE[31111] - $LOCALIZE[2]</label>
+						<onclick>Skin.ToggleSetting(HomeMenuNoMusicButton)</onclick>
+						<selected>Skin.HasSetting(HomeMenuNoMusicButton)</selected>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+					</control>
+					<control type="radiobutton" id="225"> <!-- Hide Pictures Button -->
+						<description>Hide Pictures Button</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label>$LOCALIZE[31111] - $LOCALIZE[1]</label>
+						<onclick>Skin.ToggleSetting(HomeMenuNoPicturesButton)</onclick>
+						<selected>Skin.HasSetting(HomeMenuNoPicturesButton)</selected>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+					</control>
+					<control type="radiobutton" id="226"> <!-- Hide Programs Button -->
+						<description>Hide Programs Button</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label>$LOCALIZE[31111] - $LOCALIZE[0]</label>
+						<onclick>Skin.ToggleSetting(HomeMenuNoProgramsButton)</onclick>
+						<selected>Skin.HasSetting(HomeMenuNoProgramsButton)</selected>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+					</control>
+					<control type="radiobutton" id="228"> <!-- -Hide Weather Button -->
+						<description>Hide Weather Button</description>
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<label>$LOCALIZE[31111] - $LOCALIZE[8]</label>
+						<onclick>Skin.ToggleSetting(HomeMenuNoWeatherButton)</onclick>
+						<selected>Skin.HasSetting(HomeMenuNoWeatherButton)</selected>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+					</control>
+				</control>
+				<control type="scrollbar" id="60"> <!-- ScrollBar -->
+					<left>1060</left>
+					<top>60</top>
+					<width>25</width>
+					<height>530</height>
+					<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
+					<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
+					<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
+					<textureslidernib>ScrollBarNib.png</textureslidernib>
+					<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
+					<onleft>9002</onleft>
+					<onright>9000</onright>
+					<showonepage>false</showonepage>
+					<orientation>vertical</orientation>
+					<visible>Container(9000).Hasfocus(2)</visible>
+				</control>
+				<control type="grouplist" id="9003"> <!-- Background options -->
+					<visible>Container(9000).Hasfocus(3)</visible>
+					<left>290</left>
+					<top>60</top>
+					<width>750</width>
+					<height>530</height>
+					<itemgap>-1</itemgap>
+					<pagecontrol>60</pagecontrol>
+					<onleft>9000</onleft>
+					<onright>60</onright>
+					<onup>9003</onup>
+					<ondown>9003</ondown>
+					<control type="label" id="300"> <!-- Miscellaneous options -->
+						<width>750</width>
+						<height>45</height>
+						<font>font13_title</font>
+						<label>31106</label>
+						<textcolor>blue</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>
+					<control type="radiobutton" id="301"> <!-- HideBackGroundFanart -->
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>31119</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(HideBackGroundFanart)</onclick>
+						<selected>Skin.HasSetting(HideBackGroundFanart)</selected>
+					</control>
+					<control type="radiobutton" id="302"> <!-- HideVisualizationFanart -->
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>31129</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(HideVisualizationFanart)</onclick>
+						<selected>Skin.HasSetting(HideVisualizationFanart)</selected>
+					</control>
+					<control type="radiobutton" id="303"> <!-- ShowBackgroundVideo -->
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>31124</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(ShowBackgroundVideo)</onclick>
+						<selected>!Skin.HasSetting(ShowBackgroundVideo)</selected>
+					</control>
+					<control type="radiobutton" id="304"> <!-- ShowBackgroundVis -->
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>31125</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(ShowBackgroundVis)</onclick>
+						<selected>!Skin.HasSetting(ShowBackgroundVis)</selected>
+					</control>
+					<control type="label" id="310"> <!-- Background -->
+						<width>750</width>
+						<height>45</height>
+						<font>font13_title</font>
+						<label>31102</label>
+						<textcolor>blue</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+					</control>		
+					<control type="radiobutton" id="311"> <!-- UseWeatherBackground -->
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31109] - $LOCALIZE[31950]</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(UseWeatherBackground)</onclick>
+						<selected>Skin.HasSetting(UseWeatherBackground)</selected>
+						<visible>!Skin.HasSetting(HomeMenuNoWeatherButton) + !IsEmpty(Weather.Plugin)</visible>
+					</control>
+					<control type="button" id="312"> <!-- WeatherBackGround -->
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>- $LOCALIZE[31110]</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(WeatherBackGround)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetImage(WeatherBackGround)</onclick>
+						<visible>Skin.HasSetting(UseWeatherBackground)</visible>
+					</control>	
+					<control type="radiobutton" id="313"> <!-- UsePicturesBackground -->
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31109] - $LOCALIZE[31951]</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(UsePicturesBackground)</onclick>
+						<selected>Skin.HasSetting(UsePicturesBackground)</selected>
+						<visible>!Skin.HasSetting(HomeMenuNoPicturesButton)</visible>						
+					</control>
+					<control type="button" id="314"> <!-- PicturesBackGround -->
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>- $LOCALIZE[31110]</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(PicturesBackGround)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetImage(PicturesBackGround)</onclick>
+						<visible>Skin.HasSetting(UsePicturesBackground)</visible>
+					</control>
+					<control type="radiobutton" id="315"> <!-- UsePVRBackground -->
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31109] - $LOCALIZE[31952]</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(UsePVRBackground)</onclick>
+						<selected>Skin.HasSetting(UsePVRBackground)</selected>
+						<visible>System.GetBool(pvrmanager.enabled)</visible>
+					</control>
+					<control type="button" id="316"> <!-- PVRBackGround -->
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>- $LOCALIZE[31110]</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(PVRBackGround)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetImage(PVRBackGround)</onclick>
+						<visible>Skin.HasSetting(UsePVRBackground)</visible>
+					</control>
+					<control type="radiobutton" id="317"> <!-- UseVideosBackground -->
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31109] - $LOCALIZE[31953]</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(UseVideosBackground)</onclick>
+						<selected>Skin.HasSetting(UseVideosBackground)</selected>
+						<visible>!Skin.HasSetting(HomeMenuNoVideosButton)</visible>
+					</control>
+					<control type="button" id="318"> <!-- VideosBackGround -->
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>- $LOCALIZE[31110]</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(VideosBackGround)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetImage(VideosBackGround)</onclick>
+						<visible>Skin.HasSetting(UseVideosBackground)</visible>
+					</control>
+					<control type="radiobutton" id="319"> <!-- UseMoviesBackground --> 
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31109] - $LOCALIZE[31954]</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(UseMoviesBackground)</onclick>
+						<selected>Skin.HasSetting(UseMoviesBackground)</selected>
+						<visible>!Skin.HasSetting(HomeMenuNoMovieButton) + Library.HasContent(Movies)</visible>
+					</control>
+					<control type="button" id="320"> <!-- MoviesBackGround -->
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>- $LOCALIZE[31110]</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(MoviesBackGround)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetImage(MoviesBackGround)</onclick>
+						<visible>Skin.HasSetting(UseMoviesBackground)</visible>
+					</control>	
+					<control type="radiobutton" id="321"> <!-- UseTVShowsBackground -->
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31109] - $LOCALIZE[31955]</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(UseTVShowsBackground)</onclick>
+						<selected>Skin.HasSetting(UseTVShowsBackground)</selected>
+						<visible>!Skin.HasSetting(HomeMenuNoTVShowButton) + Library.HasContent(TVShows)</visible>
+					</control>
+					<control type="button" id="322"> <!-- TVShowsBackGround -->
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>- $LOCALIZE[31110]</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(TVShowsBackGround)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetImage(TVShowsBackGround)</onclick>
+						<visible>Skin.HasSetting(UseTVShowsBackground)</visible>
+					</control>
+					<control type="radiobutton" id="323"> <!-- UseMusicBackground -->
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31109] - $LOCALIZE[31956]</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(UseMusicBackground)</onclick>
+						<selected>Skin.HasSetting(UseMusicBackground)</selected>
+						<visible>!Skin.HasSetting(HomeMenuNoMusicButton)</visible>
+					</control>
+					<control type="button" id="324"> <!-- MusicBackGround -->
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>- $LOCALIZE[31110]</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(MusicBackGround)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetImage(MusicBackGround)</onclick>
+						<visible>Skin.HasSetting(UseMusicBackground)</visible>
+					</control>
+					<control type="radiobutton" id="325"> <!-- UseProgramsBackground -->
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31109] - $LOCALIZE[31957]</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(UseProgramsBackground)</onclick>
+						<selected>Skin.HasSetting(UseProgramsBackground)</selected>
+						<visible>!Skin.HasSetting(HomeMenuNoProgramsButton)</visible>
+					</control>
+					<control type="button" id="326"> <!-- ProgramsBackGround -->
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>- $LOCALIZE[31110]</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(ProgramsBackGround)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetImage(ProgramsBackGround)</onclick>
+						<visible>Skin.HasSetting(UseProgramsBackground)</visible>
+					</control>	
+					<control type="radiobutton" id="327"> <!-- UsePlayDVDBackground -->
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31109] - $LOCALIZE[31958]</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(UsePlayDVDBackground)</onclick>
+						<selected>Skin.HasSetting(UsePlayDVDBackground)</selected>
+					</control>
+					<control type="button" id="328"> <!-- PlayDVDBackGround -->
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>- $LOCALIZE[31110]</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(PlayDVDBackGround)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetImage(PlayDVDBackGround)</onclick>
+						<visible>Skin.HasSetting(UsePlayDVDBackground)</visible>
+					</control>
+					<control type="radiobutton" id="329"> <!-- UseSettingsBackground -->
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31109] - $LOCALIZE[31959]</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(UseSettingsBackground)</onclick>
+						<selected>Skin.HasSetting(UseSettingsBackground)</selected>
+					</control>
+					<control type="button" id="330"> <!-- SettingsBackGround -->
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>- $LOCALIZE[31110]</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(SettingsBackGround)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetImage(PlaySettingsBackGround)</onclick>
+						<visible>Skin.HasSetting(UseSettingsBackground)</visible>
+					</control>
+					<control type="radiobutton" id="331"> <!-- UseCustMenu1Background -->
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31109] - $INFO[Skin.String(LabMen9021)]</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(UseCustMenu1Background)</onclick>
+						<selected>Skin.HasSetting(UseCustMenu1Background)</selected>
+						<visible>Skin.HasSetting(Men9021)</visible>
+					</control>
+					<control type="button" id="332"> <!-- CustMenu1BackGround -->
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>- $LOCALIZE[31110]</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(CustMenu1BackGround)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetImage(CustMenu1BackGround)</onclick>
+						<visible>Skin.HasSetting(UseCustMenu1Background) + Skin.HasSetting(Men9021)</visible>
+					</control>
+					<control type="radiobutton" id="333"> <!-- UseCustMenu2Background -->
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31109] - $INFO[Skin.String(LabMen9022)]</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(UseCustMenu2Background)</onclick>
+						<selected>Skin.HasSetting(UseCustMenu2Background)</selected>
+						<visible>Skin.HasSetting(Men9022)</visible>
+					</control>
+					<control type="button" id="334"> <!-- CustMenu2BackGround -->
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>- $LOCALIZE[31110]</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(CustMenu2BackGround)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetImage(CustMenu2BackGround)</onclick>
+						<visible>Skin.HasSetting(UseCustMenu2Background) + Skin.HasSetting(Men9022)</visible>
+					</control>		
+					<control type="radiobutton" id="335"> <!-- UseCustMenu3Background -->
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31109] - $INFO[Skin.String(LabMen9023)]</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(UseCustMenu3Background)</onclick>
+						<selected>Skin.HasSetting(UseCustMenu3Background)</selected>
+						<visible>Skin.HasSetting(Men9023)</visible>
+					</control>
+					<control type="button" id="336"> <!-- CustMenu3BackGround -->
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>- $LOCALIZE[31110]</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(CustMenu3BackGround)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetImage(CustMenu3BackGround)</onclick>
+						<visible>Skin.HasSetting(UseCustMenu3Background) + Skin.HasSetting(Men9023)</visible>
+					</control>		
+					<control type="radiobutton" id="337"> <!-- UseCustMenu4Background -->
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31109] - $INFO[Skin.String(LabMen9024)]</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(UseCustMenu4Background)</onclick>
+						<selected>Skin.HasSetting(UseCustMenu4Background)</selected>
+						<visible>Skin.HasSetting(Men9024)</visible>
+					</control>
+					<control type="button" id="338"> <!-- CustMenu4BackGround -->
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>- $LOCALIZE[31110]</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(CustMenu'BackGround)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetImage(CustMenu4BackGround)</onclick>
+						<visible>Skin.HasSetting(UseCustMenu4Background) + Skin.HasSetting(Men9024)</visible>
+					</control>		
+					<control type="radiobutton" id="339"> <!-- UseCustMenu5Background -->
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>$LOCALIZE[31109] - $INFO[Skin.String(LabMen9025)]</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(UseCustMenu5Background)</onclick>
+						<selected>Skin.HasSetting(UseCustMenu5Background)</selected>
+						<visible>Skin.HasSetting(Men9025)</visible>
+					</control>
+					<control type="button" id="340"> <!-- CustMenu5BackGround -->
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>- $LOCALIZE[31110]</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(CustMenu5BackGround)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetImage(CustMenu5BackGround)</onclick>
+						<visible>Skin.HasSetting(UseCustMenu5Background) + Skin.HasSetting(Men9025)</visible>
+					</control>							
+				</control>
+				<control type="scrollbar" id="60"> <!-- ScrollBar -->
+					<left>1060</left>
+					<top>60</top>
+					<width>25</width>
+					<height>530</height>
+					<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
+					<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
+					<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
+					<textureslidernib>ScrollBarNib.png</textureslidernib>
+					<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
+					<onleft>9003</onleft>
+					<onright>9000</onright>
+					<showonepage>false</showonepage>
+					<orientation>vertical</orientation>
+					<visible>Container(9000).Hasfocus(3)</visible>
+				</control>
+				<control type="group">  
+					<control type="grouplist" id="9004"> <!-- Add-On Shortcut -->
+						<visible>Container(9000).Hasfocus(4)</visible>
+						<left>290</left>
+						<top>60</top>
+						<width>750</width>
+						<height>530</height>
+						<itemgap>-1</itemgap>
+						<pagecontrol>61</pagecontrol>
+						<onleft>9000</onleft>
+						<onright>61</onright>
+						<onup>9004</onup>
+						<ondown>9004</ondown>
+						<control type="label" id="453">
+							<width>750</width>
+							<height>45</height>
+							<font>font13_title</font>
+							<label>31140</label>
+							<textcolor>blue</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<align>left</align>
+							<aligny>center</aligny>
+						</control>
+						<control type="button" id="455">
+							<width>750</width>
+							<height>40</height>
+							<font>font13</font>
+							<label>$LOCALIZE[31132]</label>
+							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(LyricScript_Path))][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
+							<onclick>Skin.SetAddon(LyricScript_Path,xbmc.python.lyrics)</onclick>
+						</control>
+						<control type="button" id="456">
+							<width>750</width>
+							<height>40</height>
+							<font>font13</font>
+							<label>- $LOCALIZE[24020]</label>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
+							<enable>!IsEmpty(Skin.String(LyricScript_Path))</enable>
+							<onclick>Addon.OpenSettings($INFO[Skin.String(LyricScript_Path)])</onclick>
+						</control> 
+
+						<control type="label" id="410">
+							<width>750</width>
+							<height>45</height>
+							<font>font13_title</font>
+							<label>31134</label>
+							<textcolor>blue</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<align>left</align>
+							<aligny>center</aligny>
+						</control>
+						<control type="button" id="411">
+							<width>750</width>
+							<height>40</height>
+							<font>font13</font>
+							<label>$LOCALIZE[24000] [B]1[/B]</label>
+							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomeVideosButton1))][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
+							<onclick>Skin.SetAddon(HomeVideosButton1,xbmc.addon.video,xbmc.addon.executable)</onclick>
+						</control>
+						<control type="button" id="412">
+							<width>750</width>
+							<height>40</height>
+							<font>font13</font>
+							<label>$LOCALIZE[24000] [B]2[/B]</label>
+							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomeVideosButton2))][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
+							<onclick>Skin.SetAddon(HomeVideosButton2,xbmc.addon.video,xbmc.addon.executable)</onclick>
+						</control>
+						<control type="button" id="413">
+							<width>750</width>
+							<height>40</height>
+							<font>font13</font>
+							<label>$LOCALIZE[24000] [B]3[/B]</label>
+							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomeVideosButton3))][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
+							<onclick>Skin.SetAddon(HomeVideosButton3,xbmc.addon.video,xbmc.addon.executable)</onclick>
+						</control>
+						<control type="button" id="414">
+							<width>750</width>
+							<height>40</height>
+							<font>font13</font>
+							<label>$LOCALIZE[24000] [B]4[/B]</label>
+							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomeVideosButton4))][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
+							<onclick>Skin.SetAddon(HomeVideosButton4,xbmc.addon.video,xbmc.addon.executable)</onclick>
+						</control>
+						<control type="button" id="415">
+							<width>750</width>
+							<height>40</height>
+							<font>font13</font>
+							<label>$LOCALIZE[24000] [B]5[/B]</label>
+							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomeVideosButton5))][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
+							<onclick>Skin.SetAddon(HomeVideosButton5,xbmc.addon.video,xbmc.addon.executable)</onclick>
+						</control>
+
+						<control type="label" id="420">
+							<width>750</width>
+							<height>45</height>
+							<font>font13_title</font>
+							<label>31135</label>
+							<textcolor>blue</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<align>left</align>
+							<aligny>center</aligny>
+						</control>
+						<control type="button" id="421">
+							<width>750</width>
+							<height>40</height>
+							<font>font13</font>
+							<label>$LOCALIZE[24000] [B]1[/B]</label>
+							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomeMusicButton1))][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
+							<onclick>Skin.SetAddon(HomeMusicButton1,xbmc.addon.audio,xbmc.addon.executable)</onclick>
+						</control>
+						<control type="button" id="422">
+							<width>750</width>
+							<height>40</height>
+							<font>font13</font>
+							<label>$LOCALIZE[24000] [B]2[/B]</label>
+							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomeMusicButton2))][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
+							<onclick>Skin.SetAddon(HomeMusicButton2,xbmc.addon.audio,xbmc.addon.executable)</onclick>
+						</control>
+						<control type="button" id="423">
+							<width>750</width>
+							<height>40</height>
+							<font>font13</font>
+							<label>$LOCALIZE[24000] [B]3[/B]</label>
+							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomeMusicButton3))][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
+							<onclick>Skin.SetAddon(HomeMusicButton3,xbmc.addon.audio,xbmc.addon.executable)</onclick>
+						</control>
+						<control type="button" id="424">
+							<width>750</width>
+							<height>40</height>
+							<font>font13</font>
+							<label>$LOCALIZE[24000] [B]4[/B]</label>
+							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomeMusicButton4))][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
+							<onclick>Skin.SetAddon(HomeMusicButton4,xbmc.addon.audio,xbmc.addon.executable)</onclick>
+						</control>
+						<control type="button" id="425">
+							<width>750</width>
+							<height>40</height>
+							<font>font13</font>
+							<label>$LOCALIZE[24000] [B]5[/B]</label>
+							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomeMusicButton5))][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
+							<onclick>Skin.SetAddon(HomeMusicButton5,xbmc.addon.audio,xbmc.addon.executable)</onclick>
+						</control>
+
+						<control type="label" id="430">
+							<width>750</width>
+							<height>45</height>
+							<font>font13_title</font>
+							<label>31136</label>
+							<textcolor>blue</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<align>left</align>
+							<aligny>center</aligny>
+						</control>
+						<control type="button" id="431">
+							<width>750</width>
+							<height>40</height>
+							<font>font13</font>
+							<label>$LOCALIZE[24000] [B]1[/B]</label>
+							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomePictureButton1))][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
+							<onclick>Skin.SetAddon(HomePictureButton1,xbmc.addon.image,xbmc.addon.executable)</onclick>
+						</control>
+						<control type="button" id="432">
+							<width>750</width>
+							<height>40</height>
+							<font>font13</font>
+							<label>$LOCALIZE[24000] [B]2[/B]</label>
+							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomePictureButton2))][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
+							<onclick>Skin.SetAddon(HomePictureButton2,xbmc.addon.image,xbmc.addon.executable)</onclick>
+						</control>
+						<control type="button" id="433">
+							<width>750</width>
+							<height>40</height>
+							<font>font13</font>
+							<label>$LOCALIZE[24000] [B]3[/B]</label>
+							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomePictureButton3))][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
+							<onclick>Skin.SetAddon(HomePictureButton3,xbmc.addon.image,xbmc.addon.executable)</onclick>
+						</control>
+						<control type="button" id="434">
+							<width>750</width>
+							<height>40</height>
+							<font>font13</font>
+							<label>$LOCALIZE[24000] [B]4[/B]</label>
+							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomePictureButton4))][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
+							<onclick>Skin.SetAddon(HomePictureButton4,xbmc.addon.image,xbmc.addon.executable)</onclick>
+						</control>
+						<control type="button" id="435">
+							<width>750</width>
+							<height>40</height>
+							<font>font13</font>
+							<label>$LOCALIZE[24000] [B]5[/B]</label>
+							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomePictureButton5))][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
+							<onclick>Skin.SetAddon(HomePictureButton5,xbmc.addon.image,xbmc.addon.executable)</onclick>
+						</control>
+
+						<control type="label" id="440">
+							<width>750</width>
+							<height>45</height>
+							<font>font13_title</font>
+							<label>31118</label>
+							<textcolor>blue</textcolor>
+							<shadowcolor>black</shadowcolor>
+							<align>left</align>
+							<aligny>center</aligny>
+						</control>
+						<control type="button" id="441">
+							<width>750</width>
+							<height>40</height>
+							<font>font13</font>
+							<label>$LOCALIZE[24000] [B]1[/B]</label>
+							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomeProgramButton1))][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
+							<onclick>Skin.SetAddon(HomeProgramButton1,xbmc.addon.executable)</onclick>
+						</control>
+						<control type="button" id="442">
+							<width>750</width>
+							<height>40</height>
+							<font>font13</font>
+							<label>$LOCALIZE[24000] [B]2[/B]</label>
+							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomeProgramButton2))][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
+							<onclick>Skin.SetAddon(HomeProgramButton2,xbmc.addon.executable)</onclick>
+						</control>
+						<control type="button" id="443">
+							<width>750</width>
+							<height>40</height>
+							<font>font13</font>
+							<label>$LOCALIZE[24000] [B]3[/B]</label>
+							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomeProgramButton3))][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
+							<onclick>Skin.SetAddon(HomeProgramButton3,xbmc.addon.executable)</onclick>
+						</control>
+						<control type="button" id="444">
+							<width>750</width>
+							<height>40</height>
+							<font>font13</font>
+							<label>$LOCALIZE[24000] [B]4[/B]</label>
+							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomeProgramButton4))][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
+							<onclick>Skin.SetAddon(HomeProgramButton4,xbmc.addon.executable)</onclick>
+						</control>
+						<control type="button" id="445">
+							<width>750</width>
+							<height>40</height>
+							<font>font13</font>
+							<label>$LOCALIZE[24000] [B]5[/B]</label>
+							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomeProgramButton5))][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
+							<onclick>Skin.SetAddon(HomeProgramButton5,xbmc.addon.executable)</onclick>
+						</control>
+						<control type="button" id="446">
+							<width>750</width>
+							<height>40</height>
+							<font>font13</font>
+							<label>$LOCALIZE[24000] [B]6[/B]</label>
+							<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(HomeProgramButton6))][/COLOR]</label2>
+							<textcolor>grey2</textcolor>
+							<focusedcolor>white</focusedcolor>
+							<texturefocus>MenuItemFO.png</texturefocus>
+							<texturenofocus>MenuItemNF.png</texturenofocus>
+							<onclick>Skin.SetAddon(HomeProgramButton6,xbmc.addon.executable)</onclick>
+						</control>
+					</control>
+				</control>
+				<control type="scrollbar" id="61"> <!-- scrollbar -->
+				
+					<left>1060</left>
+					<top>60</top>
+					<width>25</width>
+					<height>530</height>
+					<texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
+					<texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
+					<texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
+					<textureslidernib>ScrollBarNib.png</textureslidernib>
+					<textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
+					<onleft>9004</onleft>
+					<onright>9000</onright>
+					<showonepage>false</showonepage>
+					<orientation>vertical</orientation>
+					<visible>Container(9000).Hasfocus(4)</visible>
+				</control>
+				<control type="grouplist" id="9005"> <!-- Menu options -->
+					<visible>Container(9000).Hasfocus(5)</visible>
+					<left>290</left>
+					<top>60</top>
+					<width>750</width>
+					<height>530</height>
+					<itemgap>-1</itemgap>
+					<pagecontrol>60</pagecontrol>
+					<onleft>9000</onleft>
+					<onright>60</onright>
+					<onup>9004</onup>
+					<ondown>9004</ondown>
+					<control type="button" id="100"> <!-- Menu 1 -->
+						<width>750</width>
+						<height>45</height>
+						<font>font13_title</font>
+						<label>Configurer le menu $INFO[Skin.String(LabMen9021)]</label>
+						<textcolor>blue</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+						<onclick>Skin.ToggleSetting(ShowMenu9021)</onclick>
+						<onclick>Skin.Reset(ShowMenu9022)</onclick>
+						<onclick>Skin.Reset(ShowMenu9023)</onclick>
+						<onclick>Skin.Reset(ShowMenu9024)</onclick>
+						<onclick>Skin.Reset(ShowMenu9025)</onclick>
+					</control>
+					<control type="radiobutton" id="101"> <!-- Men9021 -->
+						<width>750</width>
+						<height>40</height>
+						<font>font13_title</font>
+						<label>Activer le menu - $INFO[Skin.String(LabMen9021)]</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(Men9021)</onclick>
+						<selected>Skin.HasSetting(Men9021)</selected>
+						<visible>Skin.HasSetting(ShowMenu9021)</visible>
+					</control>
+					<control type="button" id="102"> <!-- LabMen9021 -->
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>Nom:</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(LabMen9021)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(LabMen9021)</onclick>
+						<visible>Skin.HasSetting(Men9021) + Skin.HasSetting(ShowMenu9021)</visible>
+					</control>
+					<control type="button" id="103"> <!-- ClickMen9021 -->
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>Action: </label>
+						<label2>[COLOR=selected]$INFO[Skin.String(ClickMen9021)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(ClickMen9021)</onclick>
+						<onclick>ActivateWindow(2114)</onclick>
+						<visible>Skin.HasSetting(Men9021) + Skin.HasSetting(ShowMenu9021)</visible>
+					</control>	
+					<control type="radiobutton" id="104"> <!-- SubMen90211 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Activer le sous menu - $INFO[Skin.String(LabSubMen90211)]</label>
+						<textcolor>selected</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(SubMen90211)</onclick>
+						<selected>Skin.HasSetting(SubMen90211)</selected>
+						<visible>Skin.HasSetting(Men9021) + Skin.HasSetting(ShowMenu9021)</visible>
+					</control>
+					<control type="button" id="105"> <!-- LabSubMen90211 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Nom:</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(LabSubMen90211)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(LabSubMen90211)</onclick>
+						<visible>Skin.HasSetting(SubMen90211) + Skin.HasSetting(Men9021) + Skin.HasSetting(ShowMenu9021)</visible>
+					</control>
+					<control type="button" id="106"> <!-- ClickSubMen90211 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Action:</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(ClickSubMen90211)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(ClickSubMen90211)</onclick>
+						<visible>Skin.HasSetting(SubMen90211) + Skin.HasSetting(Men9021) + Skin.HasSetting(ShowMenu9021)</visible>
+					</control>
+					<control type="radiobutton" id="107"> <!-- SubMen90212 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Activer le sous menu - $INFO[Skin.String(LabSubMen90212)]</label>
+						<textcolor>selected</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(SubMen90212)</onclick>
+						<selected>Skin.HasSetting(SubMen90212)</selected>
+						<visible>Skin.HasSetting(Men9021) + Skin.HasSetting(ShowMenu9021)</visible>
+					</control>
+					<control type="button" id="108"> <!-- LabSubMen90212 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Nom:</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(LabSubMen90212)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(LabSubMen90212)</onclick>
+						<visible>Skin.HasSetting(SubMen90212) + Skin.HasSetting(Men9021) + Skin.HasSetting(ShowMenu9021)</visible>
+					</control>
+					<control type="button" id="109"> <!-- ClickSubMen90212 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Action:</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(ClickSubMen90212)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(ClickSubMen90212)</onclick>
+						<visible>Skin.HasSetting(SubMen90212) + Skin.HasSetting(Men9021) + Skin.HasSetting(ShowMenu9021)</visible>
+					</control>
+					<control type="radiobutton" id="110"> <!-- SubMen90213 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Activer le sous menu - $INFO[Skin.String(LabSubMen90213)]</label>
+						<textcolor>selected</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(SubMen90213)</onclick>
+						<selected>Skin.HasSetting(SubMen90213)</selected>
+						<visible>Skin.HasSetting(Men9021) + Skin.HasSetting(ShowMenu9021)</visible>
+					</control>
+					<control type="button" id="111"> <!-- LabSubMen90213 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Nom:</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(LabSubMen90213)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(LabSubMen90213)</onclick>
+						<visible>Skin.HasSetting(SubMen90213) + Skin.HasSetting(Men9021) + Skin.HasSetting(ShowMenu9021)</visible>
+					</control>
+					<control type="button" id="112"> <!-- ClickSubMen90213 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Action:</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(ClickSubMen90213)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(ClickSubMen90213)</onclick>
+						<visible>Skin.HasSetting(SubMen90213) + Skin.HasSetting(Men9021) + Skin.HasSetting(ShowMenu9021)</visible>
+					</control>
+					<control type="radiobutton" id="113"> <!-- SubMen90214 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Activer le sous menu - $INFO[Skin.String(LabSubMen90214)]</label>
+						<textcolor>selected</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(SubMen90214)</onclick>
+						<selected>Skin.HasSetting(SubMen90214)</selected>
+						<visible>Skin.HasSetting(Men9021) + Skin.HasSetting(ShowMenu9021)</visible>
+					</control>
+					<control type="button" id="114"> <!-- LabSubMen90214 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Nom:</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(LabSubMen90214)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(LabSubMen90214)</onclick>
+						<visible>Skin.HasSetting(SubMen90214) + Skin.HasSetting(Men9021) + Skin.HasSetting(ShowMenu9021)</visible>
+					</control>
+					<control type="button" id="115"> <!-- ClickSubMen90214 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Action:</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(ClickSubMen90214)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(ClickSubMen90214)</onclick>
+						<visible>Skin.HasSetting(SubMen90214) + Skin.HasSetting(Men9021) + Skin.HasSetting(ShowMenu9021)</visible>
+					</control>
+					<control type="radiobutton" id="116"> <!-- SubMen90215 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Activer le sous menu - $INFO[Skin.String(LabSubMen90215)]</label>
+						<textcolor>selected</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(SubMen90215)</onclick>
+						<selected>Skin.HasSetting(SubMen90215)</selected>
+						<visible>Skin.HasSetting(Men9021) + Skin.HasSetting(ShowMenu9021)</visible>
+					</control>
+					<control type="button" id="117"> <!-- LabSubMen90215 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Nom:</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(LabSubMen90215)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(LabSubMen90215)</onclick>
+						<visible>Skin.HasSetting(SubMen90215) + Skin.HasSetting(Men9021) + Skin.HasSetting(ShowMenu9021)</visible>
+					</control>
+					<control type="button" id="118"> <!-- ClickSubMen90215 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Action:</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(ClickSubMen90215)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(ClickSubMen90215)</onclick>
+						<visible>Skin.HasSetting(SubMen90215) + Skin.HasSetting(Men9021) + Skin.HasSetting(ShowMenu9021)</visible>
+					</control>
+					<control type="button" id="200"> <!-- Menu 2 -->
+						<width>750</width>
+						<height>45</height>
+						<font>font13_title</font>
+						<label>Configurer le menu $INFO[Skin.String(LabMen9022)]</label>
+						<textcolor>blue</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+						<onclick>Skin.Reset(ShowMenu9021)</onclick>
+						<onclick>Skin.ToggleSetting(ShowMenu9022)</onclick>
+						<onclick>Skin.Reset(ShowMenu9023)</onclick>
+						<onclick>Skin.Reset(ShowMenu9024)</onclick>
+						<onclick>Skin.Reset(ShowMenu9025)</onclick>
+					</control>
+					<control type="radiobutton" id="201"> <!-- Men9022 -->
+						<width>750</width>
+						<height>40</height>
+						<font>font13_title</font>
+						<label>Activer le menu - $INFO[Skin.String(LabMen9022)]</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(Men9022)</onclick>
+						<selected>Skin.HasSetting(Men9022)</selected>
+						<visible>Skin.HasSetting(ShowMenu9022)</visible>
+					</control>
+					<control type="button" id="202"> <!-- LabMen9022 -->
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>Nom:</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(LabMen9022)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(LabMen9022)</onclick>
+						<visible>Skin.HasSetting(Men9022) + Skin.HasSetting(ShowMenu9022)</visible>
+					</control>
+					<control type="button" id="203"> <!-- ClickMen9022 -->
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>Action: </label>
+						<label2>[COLOR=selected]$INFO[Skin.String(ClickMen9022)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(ClickMen9022)</onclick>
+						<visible>Skin.HasSetting(Men9022) + Skin.HasSetting(ShowMenu9022)</visible>
+					</control>	
+					<control type="radiobutton" id="204"> <!-- SubMen90221 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Activer le sous menu - $INFO[Skin.String(LabSubMen90221)]</label>
+						<textcolor>selected</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(SubMen90221)</onclick>
+						<selected>Skin.HasSetting(SubMen90221)</selected>
+						<visible>Skin.HasSetting(Men9022) + Skin.HasSetting(ShowMenu9022)</visible>
+					</control>
+					<control type="button" id="205"> <!-- LabSubMen90221 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Nom:</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(LabSubMen90221)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(LabSubMen90221)</onclick>
+						<visible>Skin.HasSetting(SubMen90221) + Skin.HasSetting(Men9022) + Skin.HasSetting(ShowMenu9022)</visible>
+					</control>
+					<control type="button" id="206"> <!-- ClickSubMen90221 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Action:</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(ClickSubMen90221)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(ClickSubMen90221)</onclick>
+						<visible>Skin.HasSetting(SubMen90221) + Skin.HasSetting(Men9022) + Skin.HasSetting(ShowMenu9022)</visible>
+					</control>
+					<control type="radiobutton" id="207"> <!-- SubMen90222 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Activer le sous menu - $INFO[Skin.String(LabSubMen90222)]</label>
+						<textcolor>selected</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(SubMen90222)</onclick>
+						<selected>Skin.HasSetting(SubMen90222)</selected>
+						<visible>Skin.HasSetting(Men9022) + Skin.HasSetting(ShowMenu9022)</visible>
+					</control>
+					<control type="button" id="208"> <!-- LabSubMen90222 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Nom:</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(LabSubMen90222)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(LabSubMen90222)</onclick>
+						<visible>Skin.HasSetting(SubMen90222) + Skin.HasSetting(Men9022) + Skin.HasSetting(ShowMenu9022)</visible>
+					</control>
+					<control type="button" id="209"> <!-- ClickSubMen90222 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Action:</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(ClickSubMen90222)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(ClickSubMen90222)</onclick>
+						<visible>Skin.HasSetting(SubMen90222) + Skin.HasSetting(Men9022) + Skin.HasSetting(ShowMenu9022)</visible>
+					</control>
+					<control type="radiobutton" id="210"> <!-- SubMen90223 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Activer le sous menu - $INFO[Skin.String(LabSubMen90223)]</label>
+						<textcolor>selected</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(SubMen90223)</onclick>
+						<selected>Skin.HasSetting(SubMen90223)</selected>
+						<visible>Skin.HasSetting(Men9022) + Skin.HasSetting(ShowMenu9022)</visible>
+					</control>
+					<control type="button" id="211"> <!-- LabSubMen90223 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Nom:</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(LabSubMen90223)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(LabSubMen90223)</onclick>
+						<visible>Skin.HasSetting(SubMen90223) + Skin.HasSetting(Men9022) + Skin.HasSetting(ShowMenu9022)</visible>
+					</control>
+					<control type="button" id="212"> <!-- ClickSubMen90223 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Action:</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(ClickSubMen90223)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(ClickSubMen90223)</onclick>
+						<visible>Skin.HasSetting(SubMen90223) + Skin.HasSetting(Men9022) + Skin.HasSetting(ShowMenu9022)</visible>
+					</control>
+					<control type="radiobutton" id="213"> <!-- SubMen90224 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Activer le sous menu - $INFO[Skin.String(LabSubMen90224)]</label>
+						<textcolor>selected</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(SubMen90224)</onclick>
+						<selected>Skin.HasSetting(SubMen90224)</selected>
+						<visible>Skin.HasSetting(Men9022) + Skin.HasSetting(ShowMenu9022)</visible>
+					</control>
+					<control type="button" id="214"> <!-- LabSubMen90224 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Nom:</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(LabSubMen90224)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(LabSubMen90224)</onclick>
+						<visible>Skin.HasSetting(SubMen90224) + Skin.HasSetting(Men9022) + Skin.HasSetting(ShowMenu9022)</visible>
+					</control>
+					<control type="button" id="215"> <!-- ClickSubMen90224 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Action:</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(ClickSubMen90224)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(ClickSubMen90224)</onclick>
+						<visible>Skin.HasSetting(SubMen90224) + Skin.HasSetting(Men9022) + Skin.HasSetting(ShowMenu9022)</visible>
+					</control>
+					<control type="radiobutton" id="216"> <!-- SubMen90225 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Activer le sous menu - $INFO[Skin.String(LabSubMen90225)]</label>
+						<textcolor>selected</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(SubMen90225)</onclick>
+						<selected>Skin.HasSetting(SubMen90225)</selected>
+						<visible>Skin.HasSetting(Men9022) + Skin.HasSetting(ShowMenu9022)</visible>
+					</control>
+					<control type="button" id="217"> <!-- LabSubMen90225 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Nom:</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(LabSubMen90225)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(LabSubMen90225)</onclick>
+						<visible>Skin.HasSetting(SubMen90225) + Skin.HasSetting(Men9022) + Skin.HasSetting(ShowMenu9022)</visible>
+					</control>
+					<control type="button" id="218"> <!-- ClickSubMen90225 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Action:</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(ClickSubMen90225)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(ClickSubMen90225)</onclick>
+						<visible>Skin.HasSetting(SubMen90225) + Skin.HasSetting(Men9022) + Skin.HasSetting(ShowMenu9022)</visible>
+					</control>
+					<control type="button" id="300"> <!-- Menu 3 -->
+						<width>750</width>
+						<height>45</height>
+						<font>font13_title</font>
+						<label>Configurer le menu $INFO[Skin.String(LabMen9023)]</label>
+						<textcolor>blue</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+						<onclick>Skin.Reset(ShowMenu9021)</onclick>
+						<onclick>Skin.Reset(ShowMenu9022)</onclick>
+						<onclick>Skin.ToggleSetting(ShowMenu9023)</onclick>
+						<onclick>Skin.Reset(ShowMenu9024)</onclick>
+						<onclick>Skin.Reset(ShowMenu9025)</onclick>
+					</control>
+					<control type="radiobutton" id="301"> <!-- Men9023 -->
+						<width>750</width>
+						<height>40</height>
+						<font>font13_title</font>
+						<label>Activer le menu - $INFO[Skin.String(LabMen9023)]</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(Men9023)</onclick>
+						<selected>Skin.HasSetting(Men9023)</selected>
+						<visible>Skin.HasSetting(ShowMenu9023)</visible>
+					</control>
+					<control type="button" id="302"> <!-- LabMen9023 -->
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>Nom:</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(LabMen9023)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(LabMen9023)</onclick>
+						<visible>Skin.HasSetting(Men9023) + Skin.HasSetting(ShowMenu9023)</visible>
+					</control>
+					<control type="button" id="303"> <!-- ClickMen9023 -->
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>Action: </label>
+						<label2>[COLOR=selected]$INFO[Skin.String(ClickMen9023)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(ClickMen9023)</onclick>
+						<visible>Skin.HasSetting(Men9023) + Skin.HasSetting(ShowMenu9023)</visible>
+					</control>	
+					<control type="radiobutton" id="304"> <!-- SubMen90231 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Activer le sous menu - $INFO[Skin.String(LabSubMen90231)]</label>
+						<textcolor>selected</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(SubMen90231)</onclick>
+						<selected>Skin.HasSetting(SubMen90231)</selected>
+						<visible>Skin.HasSetting(Men9023) + Skin.HasSetting(ShowMenu9023)</visible>
+					</control>
+					<control type="button" id="305"> <!-- LabSubMen90231 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Nom:</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(LabSubMen90231)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(LabSubMen90231)</onclick>
+						<visible>Skin.HasSetting(SubMen90231) + Skin.HasSetting(Men9023) + Skin.HasSetting(ShowMenu9023)</visible>
+					</control>
+					<control type="button" id="306"> <!-- ClickSubMen90231 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Action:</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(ClickSubMen90231)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(ClickSubMen90231)</onclick>
+						<visible>Skin.HasSetting(SubMen90231) + Skin.HasSetting(Men9023) + Skin.HasSetting(ShowMenu9023)</visible>
+					</control>
+					<control type="radiobutton" id="307"> <!-- SubMen90232 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Activer le sous menu - $INFO[Skin.String(LabSubMen90232)]</label>
+						<textcolor>selected</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(SubMen90232)</onclick>
+						<selected>Skin.HasSetting(SubMen90232)</selected>
+						<visible>Skin.HasSetting(Men9023) + Skin.HasSetting(ShowMenu9023)</visible>
+					</control>
+					<control type="button" id="308"> <!-- LabSubMen90232 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Nom:</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(LabSubMen90232)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(LabSubMen90232)</onclick>
+						<visible>Skin.HasSetting(SubMen90232) + Skin.HasSetting(Men9023) + Skin.HasSetting(ShowMenu9023)</visible>
+					</control>
+					<control type="button" id="309"> <!-- ClickSubMen90232 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Action:</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(ClickSubMen90232)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(ClickSubMen90232)</onclick>
+						<visible>Skin.HasSetting(SubMen90232) + Skin.HasSetting(Men9023) + Skin.HasSetting(ShowMenu9023)</visible>
+					</control>
+					<control type="radiobutton" id="310"> <!-- SubMen90233 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Activer le sous menu - $INFO[Skin.String(LabSubMen90233)]</label>
+						<textcolor>selected</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(SubMen90233)</onclick>
+						<selected>Skin.HasSetting(SubMen90233)</selected>
+						<visible>Skin.HasSetting(Men9023) + Skin.HasSetting(ShowMenu9023)</visible>
+					</control>
+					<control type="button" id="311"> <!-- LabSubMen90233 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Nom:</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(LabSubMen90233)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(LabSubMen90233)</onclick>
+						<visible>Skin.HasSetting(SubMen90233) + Skin.HasSetting(Men9023) + Skin.HasSetting(ShowMenu9023)</visible>
+					</control>
+					<control type="button" id="312"> <!-- ClickSubMen90233 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Action:</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(ClickSubMen90233)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(ClickSubMen90233)</onclick>
+						<visible>Skin.HasSetting(SubMen90233) + Skin.HasSetting(Men9023) + Skin.HasSetting(ShowMenu9023)</visible>
+					</control>
+					<control type="radiobutton" id="313"> <!-- SubMen90234 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Activer le sous menu - $INFO[Skin.String(LabSubMen90234)]</label>
+						<textcolor>selected</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(SubMen90234)</onclick>
+						<selected>Skin.HasSetting(SubMen90234)</selected>
+						<visible>Skin.HasSetting(Men9023) + Skin.HasSetting(ShowMenu9023)</visible>
+					</control>
+					<control type="button" id="314"> <!-- LabSubMen90234 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Nom:</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(LabSubMen90234)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(LabSubMen90234)</onclick>
+						<visible>Skin.HasSetting(SubMen90234) + Skin.HasSetting(Men9023) + Skin.HasSetting(ShowMenu9023)</visible>
+					</control>
+					<control type="button" id="315"> <!-- ClickSubMen90234 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Action:</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(ClickSubMen90234)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(ClickSubMen90234)</onclick>
+						<visible>Skin.HasSetting(SubMen90234) + Skin.HasSetting(Men9023) + Skin.HasSetting(ShowMenu9023)</visible>
+					</control>
+					<control type="radiobutton" id="316"> <!-- SubMen90235 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Activer le sous menu - $INFO[Skin.String(LabSubMen90235)]</label>
+						<textcolor>selected</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(SubMen90235)</onclick>
+						<selected>Skin.HasSetting(SubMen90235)</selected>
+						<visible>Skin.HasSetting(Men9023) + Skin.HasSetting(ShowMenu9023)</visible>
+					</control>
+					<control type="button" id="317"> <!-- LabSubMen90235 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Nom:</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(LabSubMen90235)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(LabSubMen90235)</onclick>
+						<visible>Skin.HasSetting(SubMen90235) + Skin.HasSetting(Men9023) + Skin.HasSetting(ShowMenu9023)</visible>
+					</control>
+					<control type="button" id="318"> <!-- ClickSubMen90235 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Action:</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(ClickSubMen90235)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(ClickSubMen90235)</onclick>
+						<visible>Skin.HasSetting(SubMen90235) + Skin.HasSetting(Men9023) + Skin.HasSetting(ShowMenu9023)</visible>
+					</control>
+					<control type="button" id="400"> <!-- Menu 4 -->
+						<width>750</width>
+						<height>45</height>
+						<font>font13_title</font>
+						<label>Configurer le menu $INFO[Skin.String(LabMen9024)]</label>
+						<textcolor>blue</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+						<onclick>Skin.Reset(ShowMenu9021)</onclick>
+						<onclick>Skin.Reset(ShowMenu9022)</onclick>
+						<onclick>Skin.Reset(ShowMenu9023)</onclick>
+						<onclick>Skin.ToggleSetting(ShowMenu9024)</onclick>
+						<onclick>Skin.Reset(ShowMenu9025)</onclick>
+					</control>
+					<control type="radiobutton" id="401"> <!-- Men9024 -->
+						<width>750</width>
+						<height>40</height>
+						<font>font13_title</font>
+						<label>Activer le menu - $INFO[Skin.String(LabMen9024)]</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(Men9024)</onclick>
+						<selected>Skin.HasSetting(Men9024)</selected>
+						<visible>Skin.HasSetting(ShowMenu9024)</visible>
+					</control>
+					<control type="button" id="402"> <!-- LabMen9024 -->
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>Nom:</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(LabMen9024)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(LabMen9024)</onclick>
+						<visible>Skin.HasSetting(Men9024) + Skin.HasSetting(ShowMenu9024)</visible>
+					</control>
+					<control type="button" id="403"> <!-- ClickMen9024 -->
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>Action: </label>
+						<label2>[COLOR=selected]$INFO[Skin.String(ClickMen9024)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(ClickMen9024)</onclick>
+						<visible>Skin.HasSetting(Men9024) + Skin.HasSetting(ShowMenu9024)</visible>
+					</control>	
+					<control type="radiobutton" id="404"> <!-- SubMen90241 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Activer le sous menu - $INFO[Skin.String(LabSubMen90241)]</label>
+						<textcolor>selected</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(SubMen90241)</onclick>
+						<selected>Skin.HasSetting(SubMen90241)</selected>
+						<visible>Skin.HasSetting(Men9024) + Skin.HasSetting(ShowMenu9024)</visible>
+					</control>
+					<control type="button" id="405"> <!-- LabSubMen90241 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Nom:</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(LabSubMen90241)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(LabSubMen90241)</onclick>
+						<visible>Skin.HasSetting(SubMen90241) + Skin.HasSetting(Men9024) + Skin.HasSetting(ShowMenu9024)</visible>
+					</control>
+					<control type="button" id="406"> <!-- ClickSubMen90241 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Action:</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(ClickSubMen90241)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(ClickSubMen90241)</onclick>
+						<visible>Skin.HasSetting(SubMen90241) + Skin.HasSetting(Men9024) + Skin.HasSetting(ShowMenu9024)</visible>
+					</control>
+					<control type="radiobutton" id="407"> <!-- SubMen90242 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Activer le sous menu - $INFO[Skin.String(LabSubMen90242)]</label>
+						<textcolor>selected</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(SubMen90242)</onclick>
+						<selected>Skin.HasSetting(SubMen90242)</selected>
+						<visible>Skin.HasSetting(Men9024) + Skin.HasSetting(ShowMenu9024)</visible>
+					</control>
+					<control type="button" id="408"> <!-- LabSubMen90242 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Nom:</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(LabSubMen90242)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(LabSubMen90242)</onclick>
+						<visible>Skin.HasSetting(SubMen90242) + Skin.HasSetting(Men9024) + Skin.HasSetting(ShowMenu9024)</visible>
+					</control>
+					<control type="button" id="409"> <!-- ClickSubMen90242 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Action:</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(ClickSubMen90242)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(ClickSubMen90242)</onclick>
+						<visible>Skin.HasSetting(SubMen90242) + Skin.HasSetting(Men9024) + Skin.HasSetting(ShowMenu9024)</visible>
+					</control>
+					<control type="radiobutton" id="410"> <!-- SubMen90243 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Activer le sous menu - $INFO[Skin.String(LabSubMen90243)]</label>
+						<textcolor>selected</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(SubMen90243)</onclick>
+						<selected>Skin.HasSetting(SubMen90243)</selected>
+						<visible>Skin.HasSetting(Men9024) + Skin.HasSetting(ShowMenu9024)</visible>
+					</control>
+					<control type="button" id="411"> <!-- LabSubMen90243 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Nom:</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(LabSubMen90243)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(LabSubMen90243)</onclick>
+						<visible>Skin.HasSetting(SubMen90243) + Skin.HasSetting(Men9024) + Skin.HasSetting(ShowMenu9024)</visible>
+					</control>
+					<control type="button" id="412"> <!-- ClickSubMen90243 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Action:</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(ClickSubMen90243)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(ClickSubMen90243)</onclick>
+						<visible>Skin.HasSetting(SubMen90243) + Skin.HasSetting(Men9024) + Skin.HasSetting(ShowMenu9024)</visible>
+					</control>
+					<control type="radiobutton" id="413"> <!-- SubMen90244 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Activer le sous menu - $INFO[Skin.String(LabSubMen90244)]</label>
+						<textcolor>selected</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(SubMen90244)</onclick>
+						<selected>Skin.HasSetting(SubMen90244)</selected>
+						<visible>Skin.HasSetting(Men9024) + Skin.HasSetting(ShowMenu9024)</visible>
+					</control>
+					<control type="button" id="414"> <!-- LabSubMen90244 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Nom:</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(LabSubMen90244)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(LabSubMen90244)</onclick>
+						<visible>Skin.HasSetting(SubMen90244) + Skin.HasSetting(Men9024) + Skin.HasSetting(ShowMenu9024)</visible>
+					</control>
+					<control type="button" id="415"> <!-- ClickSubMen90244 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Action:</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(ClickSubMen90244)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(ClickSubMen90244)</onclick>
+						<visible>Skin.HasSetting(SubMen90244) + Skin.HasSetting(Men9024) + Skin.HasSetting(ShowMenu9024)</visible>
+					</control>
+					<control type="radiobutton" id="416"> <!-- SubMen90245 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Activer le sous menu - $INFO[Skin.String(LabSubMen90245)]</label>
+						<textcolor>selected</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(SubMen90245)</onclick>
+						<selected>Skin.HasSetting(SubMen90245)</selected>
+						<visible>Skin.HasSetting(Men9024) + Skin.HasSetting(ShowMenu9024)</visible>
+					</control>
+					<control type="button" id="417"> <!-- LabSubMen90245 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Nom:</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(LabSubMen90245)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(LabSubMen90245)</onclick>
+						<visible>Skin.HasSetting(SubMen90245) + Skin.HasSetting(Men9024) + Skin.HasSetting(ShowMenu9024)</visible>
+					</control>
+					<control type="button" id="418"> <!-- ClickSubMen90245 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Action:</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(ClickSubMen90245)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(ClickSubMen90245)</onclick>
+						<visible>Skin.HasSetting(SubMen90245) + Skin.HasSetting(Men9024) + Skin.HasSetting(ShowMenu9024)</visible>
+					</control>
+					<control type="button" id="500"> <!-- Menu 5 -->
+						<width>750</width>
+						<height>45</height>
+						<font>font13_title</font>
+						<label>Configurer le menu $INFO[Skin.String(LabMen9025)]</label>
+						<textcolor>blue</textcolor>
+						<shadowcolor>black</shadowcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+						<onclick>Skin.Reset(ShowMenu9021)</onclick>
+						<onclick>Skin.Reset(ShowMenu9022)</onclick>
+						<onclick>Skin.Reset(ShowMenu9023)</onclick>
+						<onclick>Skin.Reset(ShowMenu9024)</onclick>
+						<onclick>Skin.ToggleSetting(ShowMenu9025)</onclick>
+					</control>
+					<control type="radiobutton" id="501"> <!-- Men9025 -->
+						<width>750</width>
+						<height>40</height>
+						<font>font13_title</font>
+						<label>Activer le menu - $INFO[Skin.String(LabMen9025)]</label>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(Men9025)</onclick>
+						<selected>Skin.HasSetting(Men9025)</selected>
+						<visible>Skin.HasSetting(ShowMenu9025)</visible>
+					</control>
+					<control type="button" id="502"> <!-- LabMen9025 -->
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>Nom:</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(LabMen9025)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(LabMen9025)</onclick>
+						<visible>Skin.HasSetting(Men9025) + Skin.HasSetting(ShowMenu9025)</visible>
+					</control>
+					<control type="button" id="503"> <!-- ClickMen9025 -->
+						<width>750</width>
+						<height>40</height>
+						<font>font13</font>
+						<label>Action: </label>
+						<label2>[COLOR=selected]$INFO[Skin.String(ClickMen9025)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(ClickMen9025)</onclick>
+						<visible>Skin.HasSetting(Men9025) + Skin.HasSetting(ShowMenu9025)</visible>
+					</control>	
+					<control type="radiobutton" id="504"> <!-- SubMen90251 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Activer le sous menu - $INFO[Skin.String(LabSubMen90251)]</label>
+						<textcolor>selected</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(SubMen90251)</onclick>
+						<selected>Skin.HasSetting(SubMen90251)</selected>
+						<visible>Skin.HasSetting(Men9025) + Skin.HasSetting(ShowMenu9025)</visible>
+					</control>
+					<control type="button" id="505"> <!-- LabSubMen90251 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Nom:</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(LabSubMen90251)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(LabSubMen90251)</onclick>
+						<visible>Skin.HasSetting(SubMen90251) + Skin.HasSetting(Men9025) + Skin.HasSetting(ShowMenu9025)</visible>
+					</control>
+					<control type="button" id="506"> <!-- ClickSubMen90251 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Action:</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(ClickSubMen90251)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(ClickSubMen90251)</onclick>
+						<visible>Skin.HasSetting(SubMen90251) + Skin.HasSetting(Men9025) + Skin.HasSetting(ShowMenu9025)</visible>
+					</control>
+					<control type="radiobutton" id="507"> <!-- SubMen90252 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Activer le sous menu - $INFO[Skin.String(LabSubMen90252)]</label>
+						<textcolor>selected</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(SubMen90252)</onclick>
+						<selected>Skin.HasSetting(SubMen90252)</selected>
+						<visible>Skin.HasSetting(Men9025) + Skin.HasSetting(ShowMenu9025)</visible>
+					</control>
+					<control type="button" id="508"> <!-- LabSubMen90252 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Nom:</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(LabSubMen90252)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(LabSubMen90252)</onclick>
+						<visible>Skin.HasSetting(SubMen90252) + Skin.HasSetting(Men9025) + Skin.HasSetting(ShowMenu9025)</visible>
+					</control>
+					<control type="button" id="509"> <!-- ClickSubMen90252 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Action:</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(ClickSubMen90252)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(ClickSubMen90252)</onclick>
+						<visible>Skin.HasSetting(SubMen90252) + Skin.HasSetting(Men9025) + Skin.HasSetting(ShowMenu9025)</visible>
+					</control>
+					<control type="radiobutton" id="510"> <!-- SubMen90253 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Activer le sous menu - $INFO[Skin.String(LabSubMen90253)]</label>
+						<textcolor>selected</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(SubMen90253)</onclick>
+						<selected>Skin.HasSetting(SubMen90253)</selected>
+						<visible>Skin.HasSetting(Men9025) + Skin.HasSetting(ShowMenu9025)</visible>
+					</control>
+					<control type="button" id="511"> <!-- LabSubMen90253 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Nom:</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(LabSubMen90253)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(LabSubMen90253)</onclick>
+						<visible>Skin.HasSetting(SubMen90253) + Skin.HasSetting(Men9025) + Skin.HasSetting(ShowMenu9025)</visible>
+					</control>
+					<control type="button" id="512"> <!-- ClickSubMen90253 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Action:</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(ClickSubMen90253)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(ClickSubMen90253)</onclick>
+						<visible>Skin.HasSetting(SubMen90253) + Skin.HasSetting(Men9025) + Skin.HasSetting(ShowMenu9025)</visible>
+					</control>
+					<control type="radiobutton" id="513"> <!-- SubMen90254 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Activer le sous menu - $INFO[Skin.String(LabSubMen90254)]</label>
+						<textcolor>selected</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(SubMen90254)</onclick>
+						<selected>Skin.HasSetting(SubMen90254)</selected>
+						<visible>Skin.HasSetting(Men9025) + Skin.HasSetting(ShowMenu9025)</visible>
+					</control>
+					<control type="button" id="514"> <!-- LabSubMen90254 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Nom:</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(LabSubMen90254)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(LabSubMen90254)</onclick>
+						<visible>Skin.HasSetting(SubMen90254) + Skin.HasSetting(Men9025) + Skin.HasSetting(ShowMenu9025)</visible>
+					</control>
+					<control type="button" id="515"> <!-- ClickSubMen90254 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Action:</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(ClickSubMen90254)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(ClickSubMen90254)</onclick>
+						<visible>Skin.HasSetting(SubMen90254) + Skin.HasSetting(Men9025) + Skin.HasSetting(ShowMenu9025)</visible>
+					</control>
+					<control type="radiobutton" id="516"> <!-- SubMen90255 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Activer le sous menu - $INFO[Skin.String(LabSubMen90255)]</label>
+						<textcolor>selected</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.ToggleSetting(SubMen90255)</onclick>
+						<selected>Skin.HasSetting(SubMen90255)</selected>
+						<visible>Skin.HasSetting(Men9025) + Skin.HasSetting(ShowMenu9025)</visible>
+					</control>
+					<control type="button" id="517"> <!-- LabSubMen90255 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Nom:</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(LabSubMen90255)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(LabSubMen90255)</onclick>
+						<visible>Skin.HasSetting(SubMen90255) + Skin.HasSetting(Men9025) + Skin.HasSetting(ShowMenu9025)</visible>
+					</control>
+					<control type="button" id="518"> <!-- ClickSubMen90255 -->
+						<width>750</width>
+						<height>30</height>
+						<font>font10</font>
+						<label>Action:</label>
+						<label2>[COLOR=selected]$INFO[Skin.String(ClickSubMen90255)][/COLOR]</label2>
+						<textcolor>grey2</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<texturefocus>MenuItemFO.png</texturefocus>
+						<texturenofocus>MenuItemNF.png</texturenofocus>
+						<onclick>Skin.SetString(ClickSubMen90255)</onclick>
+						<visible>Skin.HasSetting(SubMen90255) + Skin.HasSetting(Men9025) + Skin.HasSetting(ShowMenu9025)</visible>
+					</control>
+				</control>		
+			</control>
+		</control>
+		<include>CommonNowPlaying</include>
+		<include>MainWindowMouseButtons</include>
+		<include>BehindDialogFadeOut</include>
+		<include>Clock</include>
+	</controls>
+</window>

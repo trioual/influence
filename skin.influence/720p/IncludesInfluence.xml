@@ -1,0 +1,298 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+
+	<include name=HomeMenuCust>
+		<item id="21">  <!-- CustMenu 1 -->
+			<label>$INFO[Skin.String(LabMen9021)]</label>
+			<onclick>$INFO[Skin.String(ClickMen9021)]</onclick>
+			<visible>Skin.HasSetting(Men9021)</visible>
+			<icon>-</icon>
+			<thumb>-</thumb>
+		</item>
+		<item id="22">  <!-- CustMenu 2 -->
+			<label>$INFO[Skin.String(LabMen9022)]</label>
+			<onclick>$INFO[Skin.String(ClickMen9022)]</onclick>
+			<visible>Skin.HasSetting(Men9022)</visible>
+			<icon>-</icon>
+			<thumb>-</thumb>
+		</item>
+		<item id="23">  <!-- CustMenu 3 -->
+			<label>$INFO[Skin.String(LabMen9023)]</label>
+			<onclick>$INFO[Skin.String(ClickMen9023)]</onclick>
+			<visible>Skin.HasSetting(Men9023)</visible>
+			<icon>-</icon>
+			<thumb>-</thumb>
+		</item>
+		<item id="24">  <!-- CustMenu 4 -->
+			<label>$INFO[Skin.String(LabMen9024)]</label>
+			<onclick>$INFO[Skin.String(ClickMen9024)]</onclick>
+			<visible>Skin.HasSetting(Men9024)</visible>
+			<icon>-</icon>
+			<thumb>-</thumb>
+		</item>
+		<item id="25">  <!-- CustMenu 5 -->
+			<label>$INFO[Skin.String(LabMen9025)]</label>
+			<onclick>$INFO[Skin.String(ClickMen9025)]</onclick>
+			<visible>Skin.HasSetting(Men9025)</visible>
+			<icon>-</icon>
+			<thumb>-</thumb>
+		</item>
+	</include>
+	<include name="HomeSubMenuCust">
+		<control type="grouplist" id="9021"> <!-- HomeSubMenuCust1 -->
+			<include>HomeSubMenuCommonValues</include>
+			<onleft>9021</onleft>
+			<onright>9021</onright>
+			<visible>Container(9000).HasFocus(21)</visible>
+			<include>HomeSubMenuCust1</include> <!-- Buttons for the grouplist -->
+		</control>
+		<control type="grouplist" id="9022"> <!-- HomeSubMenuCust1 -->
+			<include>HomeSubMenuCommonValues</include>
+			<onleft>9022</onleft>
+			<onright>9022</onright>
+			<visible>Container(9000).HasFocus(22)</visible>
+			<include>HomeSubMenuCust2</include> <!-- Buttons for the grouplist -->
+		</control>
+		<control type="grouplist" id="9023"> <!-- HomeSubMenuCust1 -->
+			<include>HomeSubMenuCommonValues</include>
+			<onleft>9023</onleft>
+			<onright>9023</onright>
+			<visible>Container(9000).HasFocus(23)</visible>
+			<include>HomeSubMenuCust3</include> <!-- Buttons for the grouplist -->
+		</control>
+		<control type="grouplist" id="9024"> <!-- HomeSubMenuCust1 -->
+			<include>HomeSubMenuCommonValues</include>
+			<onleft>9024</onleft>
+			<onright>9024</onright>
+			<visible>Container(9000).HasFocus(24)</visible>
+			<include>HomeSubMenuCust4</include> <!-- Buttons for the grouplist -->
+		</control>
+		<control type="grouplist" id="9025"> <!-- HomeSubMenuCust1 -->
+			<include>HomeSubMenuCommonValues</include>
+			<onleft>9025</onleft>
+			<onright>9025</onright>
+			<visible>Container(9000).HasFocus(25)</visible>
+			<include>HomeSubMenuCust5</include> <!-- Buttons for the grouplist -->
+		</control>
+	</include>
+	<include name="HomeSubMenuCust1">
+		<control type="image" id="90210">
+			<width>35</width>
+			<height>35</height>
+			<texture colordiffuse="$INFO[Skin.String(T-HomeSubMenu)]" border="0,0,0,3" flipx="true">HomeSubEnd.png</texture>
+			<visible>Skin.HasSetting(SubMen90211) | Skin.HasSetting(SubMen90212) | Skin.HasSetting(SubMen90213) | Skin.HasSetting(SubMen90214) | Skin.HasSetting(SubMen90215) </visible>
+		</control>
+		<control type="button" id="90211">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>$INFO[Skin.String(LabSubMen90211)]</label>
+			<onclick>$INFO[Skin.String(ClickSubMen90211)]</onclick>
+			<visible>Skin.HasSetting(SubMen90211)</visible>
+		</control>
+		<control type="button" id="90212">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>$INFO[Skin.String(LabSubMen90212)]</label>
+			<onclick>$INFO[Skin.String(ClickSubMen90212)]</onclick>
+			<visible>Skin.HasSetting(SubMen90212)</visible>
+		</control>
+		<control type="button" id="90213">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>$INFO[Skin.String(LabSubMen90213)]</label>
+			<onclick>$INFO[Skin.String(ClickSubMen90213)]</onclick>
+			<visible>Skin.HasSetting(SubMen90213)</visible>
+		</control>
+		<control type="button" id="90214">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>$INFO[Skin.String(LabSubMen90214)]</label>
+			<onclick>$INFO[Skin.String(ClickSubMen90214)]</onclick>
+			<visible>Skin.HasSetting(SubMen90214)</visible>
+		</control>
+		<control type="button" id="90215">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>$INFO[Skin.String(LabSubMen90215)]</label>
+			<onclick>$INFO[Skin.String(ClickSubMen90215)]</onclick>
+			<visible>Skin.HasSetting(SubMen90215)</visible>
+		</control>
+		<control type="image" id="90216">
+			<width>35</width>
+			<height>35</height>
+			<texture colordiffuse="$INFO[Skin.String(T-HomeSubMenu)]" border="0,0,0,3">HomeSubEnd.png</texture>
+			<visible>Skin.HasSetting(SubMen90211) | Skin.HasSetting(SubMen90212) | Skin.HasSetting(SubMen90213) | Skin.HasSetting(SubMen90214) | Skin.HasSetting(SubMen90215) </visible>
+		</control>
+	</include>
+	<include name="HomeSubMenuCust2">
+		<control type="image" id="90220">
+			<width>35</width>
+			<height>35</height>
+			<texture colordiffuse="$INFO[Skin.String(T-HomeSubMenu)]" border="0,0,0,3" flipx="true">HomeSubEnd.png</texture>
+			<visible>Skin.HasSetting(SubMen90221) | Skin.HasSetting(SubMen90222) | Skin.HasSetting(SubMen90223) | Skin.HasSetting(SubMen90224) | Skin.HasSetting(SubMen90225) </visible>
+		</control>
+		<control type="button" id="90221">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>$INFO[Skin.String(LabSubMen90221)]</label>
+			<onclick>$INFO[Skin.String(ClickSubMen90221)]</onclick>
+			<visible>Skin.HasSetting(SubMen90221)</visible>
+		</control>
+		<control type="button" id="90222">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>$INFO[Skin.String(LabSubMen90222)]</label>
+			<onclick>$INFO[Skin.String(ClickSubMen90222)]</onclick>
+			<visible>Skin.HasSetting(SubMen90222)</visible>
+		</control>
+		<control type="button" id="90223">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>$INFO[Skin.String(LabSubMen90223)]</label>
+			<onclick>$INFO[Skin.String(ClickSubMen90223)]</onclick>
+			<visible>Skin.HasSetting(SubMen90223)</visible>
+		</control>
+		<control type="button" id="90224">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>$INFO[Skin.String(LabSubMen90224)]</label>
+			<onclick>$INFO[Skin.String(ClickSubMen90224)]</onclick>
+			<visible>Skin.HasSetting(SubMen90224)</visible>
+		</control>
+		<control type="button" id="90225">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>$INFO[Skin.String(LabSubMen90225)]</label>
+			<onclick>$INFO[Skin.String(ClickSubMen90225)]</onclick>
+			<visible>Skin.HasSetting(SubMen90225)</visible>
+		</control>
+		<control type="image" id="90226">
+			<width>35</width>
+			<height>35</height>
+			<texture colordiffuse="$INFO[Skin.String(T-HomeSubMenu)]" border="0,0,0,3">HomeSubEnd.png</texture>
+			<visible>Skin.HasSetting(SubMen90221) | Skin.HasSetting(SubMen90222) | Skin.HasSetting(SubMen90223) | Skin.HasSetting(SubMen90224) | Skin.HasSetting(SubMen90225) </visible>
+		</control>
+	</include>
+	<include name="HomeSubMenuCust3">
+		<control type="image" id="90230">
+			<width>35</width>
+			<height>35</height>
+			<texture colordiffuse="$INFO[Skin.String(T-HomeSubMenu)]" border="0,0,0,3" flipx="true">HomeSubEnd.png</texture>
+			<visible>Skin.HasSetting(SubMen90231) | Skin.HasSetting(SubMen90232) | Skin.HasSetting(SubMen90233) | Skin.HasSetting(SubMen90234) | Skin.HasSetting(SubMen90235) </visible>
+		</control>
+		<control type="button" id="90231">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>$INFO[Skin.String(LabSubMen90231)]</label>
+			<onclick>$INFO[Skin.String(ClickSubMen90231)]</onclick>
+			<visible>Skin.HasSetting(SubMen90231)</visible>
+		</control>
+		<control type="button" id="90232">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>$INFO[Skin.String(LabSubMen90232)]</label>
+			<onclick>$INFO[Skin.String(ClickSubMen90232)]</onclick>
+			<visible>Skin.HasSetting(SubMen90232)</visible>
+		</control>
+		<control type="button" id="90233">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>$INFO[Skin.String(LabSubMen90233)]</label>
+			<onclick>$INFO[Skin.String(ClickSubMen90233)]</onclick>
+			<visible>Skin.HasSetting(SubMen90233)</visible>
+		</control>
+		<control type="button" id="90234">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>$INFO[Skin.String(LabSubMen90234)]</label>
+			<onclick>$INFO[Skin.String(ClickSubMen90234)]</onclick>
+			<visible>Skin.HasSetting(SubMen90234)</visible>
+		</control>
+		<control type="button" id="90235">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>$INFO[Skin.String(LabSubMen90235)]</label>
+			<onclick>$INFO[Skin.String(ClickSubMen90235)]</onclick>
+			<visible>Skin.HasSetting(SubMen90235)</visible>
+		</control>
+		<control type="image" id="90236">
+			<width>35</width>
+			<height>35</height>
+			<texture colordiffuse="$INFO[Skin.String(T-HomeSubMenu)]" border="0,0,0,3">HomeSubEnd.png</texture>
+			<visible>Skin.HasSetting(SubMen90231) | Skin.HasSetting(SubMen90232) | Skin.HasSetting(SubMen90233) | Skin.HasSetting(SubMen90234) | Skin.HasSetting(SubMen90235) </visible>
+		</control>
+	</include>
+	<include name="HomeSubMenuCust4">
+		<control type="image" id="90240">
+			<width>35</width>
+			<height>35</height>
+			<texture colordiffuse="$INFO[Skin.String(T-HomeSubMenu)]" border="0,0,0,3" flipx="true">HomeSubEnd.png</texture>
+			<visible>Skin.HasSetting(SubMen90241) | Skin.HasSetting(SubMen90242) | Skin.HasSetting(SubMen90243) | Skin.HasSetting(SubMen90244) | Skin.HasSetting(SubMen90245) </visible>
+		</control>
+		<control type="button" id="90241">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>$INFO[Skin.String(LabSubMen90241)]</label>
+			<onclick>$INFO[Skin.String(ClickSubMen90241)]</onclick>
+			<visible>Skin.HasSetting(SubMen90241)</visible>
+		</control>
+		<control type="button" id="90242">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>$INFO[Skin.String(LabSubMen90242)]</label>
+			<onclick>$INFO[Skin.String(ClickSubMen90242)]</onclick>
+			<visible>Skin.HasSetting(SubMen90242)</visible>
+		</control>
+		<control type="button" id="90243">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>$INFO[Skin.String(LabSubMen90243)]</label>
+			<onclick>$INFO[Skin.String(ClickSubMen90243)]</onclick>
+			<visible>Skin.HasSetting(SubMen90243)</visible>
+		</control>
+		<control type="button" id="90244">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>$INFO[Skin.String(LabSubMen90244)]</label>
+			<onclick>$INFO[Skin.String(ClickSubMen90244)]</onclick>
+			<visible>Skin.HasSetting(SubMen90244)</visible>
+		</control>
+		<control type="button" id="90245">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>$INFO[Skin.String(LabSubMen90245)]</label>
+			<onclick>$INFO[Skin.String(ClickSubMen90245)]</onclick>
+			<visible>Skin.HasSetting(SubMen90245)</visible>
+		</control>
+		<control type="image" id="90246">
+			<width>35</width>
+			<height>35</height>
+			<texture colordiffuse="$INFO[Skin.String(T-HomeSubMenu)]" border="0,0,0,3">HomeSubEnd.png</texture>
+			<visible>Skin.HasSetting(SubMen90241) | Skin.HasSetting(SubMen90242) | Skin.HasSetting(SubMen90243) | Skin.HasSetting(SubMen90244) | Skin.HasSetting(SubMen90245) </visible>
+		</control>
+	</include>
+	<include name="HomeSubMenuCust5">
+		<control type="image" id="90250">
+			<width>35</width>
+			<height>35</height>
+			<texture colordiffuse="$INFO[Skin.String(T-HomeSubMenu)]" border="0,0,0,3" flipx="true">HomeSubEnd.png</texture>
+			<visible>Skin.HasSetting(SubMen90251) | Skin.HasSetting(SubMen90252) | Skin.HasSetting(SubMen90253) | Skin.HasSetting(SubMen90254) | Skin.HasSetting(SubMen90255) </visible>
+		</control>
+		<control type="button" id="90251">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>$INFO[Skin.String(LabSubMen90251)]</label>
+			<onclick>$INFO[Skin.String(ClickSubMen90251)]</onclick>
+			<visible>Skin.HasSetting(SubMen90251)</visible>
+		</control>
+		<control type="button" id="90252">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>$INFO[Skin.String(LabSubMen90252)]</label>
+			<onclick>$INFO[Skin.String(ClickSubMen90252)]</onclick>
+			<visible>Skin.HasSetting(SubMen90252)</visible>
+		</control>
+		<control type="button" id="90253">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>$INFO[Skin.String(LabSubMen90253)]</label>
+			<onclick>$INFO[Skin.String(ClickSubMen90253)]</onclick>
+			<visible>Skin.HasSetting(SubMen90253)</visible>
+		</control>
+		<control type="button" id="90254">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>$INFO[Skin.String(LabSubMen90254)]</label>
+			<onclick>$INFO[Skin.String(ClickSubMen90254)]</onclick>
+			<visible>Skin.HasSetting(SubMen90254)</visible>
+		</control>
+		<control type="button" id="90255">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>$INFO[Skin.String(LabSubMen90255)]</label>
+			<onclick>$INFO[Skin.String(ClickSubMen90255)]</onclick>
+			<visible>Skin.HasSetting(SubMen90255)</visible>
+		</control>
+		<control type="image" id="90256">
+			<width>35</width>
+			<height>35</height>
+			<texture colordiffuse="$INFO[Skin.String(T-HomeSubMenu)]" border="0,0,0,3">HomeSubEnd.png</texture>
+			<visible>Skin.HasSetting(SubMen90251) | Skin.HasSetting(SubMen90252) | Skin.HasSetting(SubMen90253) | Skin.HasSetting(SubMen90254) | Skin.HasSetting(SubMen90255) </visible>
+		</control>
+	</include>
+</includes>
